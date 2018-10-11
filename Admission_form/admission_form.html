@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admission Form</title>
+  <meta charset="utf-8">
+  <!--responsive screen and touch zooming-->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+  <!--stylesheets-->
+  <!-- <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-grid.css">
+  <link rel="stylesheet" href="css/bootstrap-reboot.css">
+  <link rel="stylesheet" href="css/bootstrap-reboot.min.css"> -->
+
+  <!--Online libraries-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+ 
+</head>
+<body>
+  
+<div class="container mt-3 mb-5">
+    <h1 class="text-center display-4">Admission Form</h1><hr class="bg-dark">
+    <h4 class="mt-5 mb-3">Personal Info</h4>
+    <form class="needs-validation" novalidate method="post" action="admission_form.php">
+
+    <div class="row mb-3">
+  <!--  <div class="form-inline mb-3">-->
+          <div class="col-md-4">
+            <label for="name">Enter your name:</label>
+            <input type="text" class="form-control " style="width: 300px;" placeholder="Name" id="name" name="name" required><!-- <span> <?php echo $nameErr; ?></span> -->
+            <div class="invalid-feedback">
+                Valid first name is required
+            </div>
+          </div>
+
+        <div class="col-md-4">
+          <label for="fname" >Enter your father name:</label>
+          <input type="text" class="form-control" style="width: 300px;" placeholder="Father Name"  id="fname" name="father_name" required><!-- <span> <?php echo $fnameErr;?></span> -->
+          <div class="invalid-feedback">
+                Valid first name is required
+           </div>
+        </div>
+   
+      <div class="col-md-4">
+        <label for="Dob">Date of Birth</label>
+        <input type="date" class="form-control" id="Dob" style="width: 300px;" placeholder="dd-mm-yyyy" name="dob" >
+      </div>
+    </div>  
+
+    <div class="row mb-3">
+	    <div class="col-md-4">
+	      <!--<label for="religion">Religion</label>
+	      <input type="text" class="form-control" id="religion" style="width: 300px;" placeholder="Religion" name="religion">-->
+            <label for="religion">Religion</label>
+            <select name="religion" style="width: 300px;" id="religion" class="custom-select">
+                <option selected>Religion</option>
+                <option value="islam">Islam</option>
+                <option value="christanity">Christanity</option>
+                <option value="hinduism">Hinduism</option>
+                <option value="budhism">Budhism</option>
+            </select>
+	    </div>
+
+        <div class="col-md-4">
+          <label for="cnic">CNIC/B-form No</label>
+          <input type="CNIC" class="form-control" id="cnic" style="width: 300px;" placeholder="*****-*******-*" name="cnic" required><!-- <span> <?php echo $cnicErr;?></span> -->
+          <div class="invalid-feedback">
+                Valid CNIC/B-form No is required
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="contact">Contact No</label>
+          <input type="contact-no" class="form-control" id="contact" style="width: 300px;" placeholder="****-*******" name="contact_no" required><!-- <span> <?php echo $contactErr;?></span> -->
+          <div class="invalid-feedback">
+                Valid contact no is required
+          </div>
+        </div>
+    </div>
+
+     <div class="row mb-3">
+       	<div class="col-md-5">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email"  placeholder="abc@example.com" name="email"><!-- <span> <?php echo $emailErr;?></span> -->
+        </div>
+
+        <div class="col-md-4 mt-3 form-inline">
+                 <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" id="male" name="gender" value="Male">
+                  <label class="custom-control-label mr-5" for="male">Male</label>
+                 </div>
+                 <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input " id="female" name="gender" value="Female">
+                  <label class="custom-control-label" for="female">Female</label>
+                  <!-- <span> <?php echo $genderErr;?></span> -->
+                 </div>
+            
+    	</div>
+      	
+  	</div>
+
+    
+	<div>
+		<h4 class="mt-4">Regional Info</h4>
+		  <div class="row  mt-3 mb-3">
+		      <div class="col-md-4">
+		       <!-- <label for="country">Your Country</label>
+		        <input type="text" class="form-control" id="country" style="width: 250px;" placeholder="Country name" name="country" required><span> <?php echo $countryErr;?></span>
+		        <div class="invalid-feedback">
+                	Valid country name is required
+            	</div>-->
+                <label for="country">Your Country</label>
+                <select name="country" style="width: 300px;" id="country" class="custom-select" onchange="cityChange(this);">
+                    <option selected value="empty">Country</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="India">India</option>
+                    <option value="China">China</option>
+                    <option value="America">America</option>
+                    <option value="Canada">Canada</option>
+                    <option value="England">England</option>
+                </select>
+		      </div>
+
+		      <div class="col-md-4">
+		        <!--<label for="city" >City name</label>
+		        <input type="text" class="form-control" id="city" style="width: 250px;" placeholder="City" name="city" required><span> <?php echo $cityErr;?></span>
+		        <div class="invalid-feedback">
+                	Valid city name is required
+            	</div>-->
+               
+                
+                <label for="city">City name</label>
+                <select name="city" style="width: 300px;" id="city" class="custom-select" onchange="districtChange(this);">
+                    <option value="0">City</option>
+                </select>
+		      </div>
+
+		      <div class="col-md-4">
+		        <!--<label for="district" >District</label>
+		        <input type="text" class="form-control" id="district" style="width: 250px;" placeholder="District" name="district" required><span> <?php echo $districtErr;?></span>
+		        <div class="invalid-feedback">
+               		Valid district name is required
+            	</div>-->
+              
+                <label for="district">District</label>
+                <select name="district" style="width: 300px;" id="district" class="custom-select" onchange="districtChange(this);">
+                    <option value="0">District</option>
+                </select>
+		      </div>
+		  </div>
+	</div>
+
+	<div>
+		<h4 class="mt-4 mb-3">Academic Info</h4>
+	  	<div class="row mb-3">
+	        <div class="col-md-4">
+	          <label for="matric">Matric/O-level</label>
+	          <input type="marks" class="form-control" id="matric" style="width: 300px;" placeholder="Matric/O-level marks" name="matric_marks"  required><!-- <span> <?php echo $matric_marksErr;?></span> -->
+	          <div class="invalid-feedback">
+                Matric/O-level marks are required
+              </div>
+	        </div>
+	        <div class="col-md-4">
+	            <label for="Intermediate">Intermediate/A-level</label>
+	            <input type="marks" class="form-control" id="Intermediate" style="width: 300px;" placeholder="Intermediate/A-level marks" name="inter_marks"  required><!-- <span> <?php echo $inter_marksErr;?></span> -->
+	            <div class="invalid-feedback">
+                	Intermediate/A-level marks are required
+            	</div>
+	        </div>
+	      	<div class="col-md-4">
+	      		<label for="degree">Degree you are applying for</label>
+	          <select name="pursuing_program" style="width: 300px;" id="degree" class="custom-select" required><!-- <span> <?php echo $pursuing_programErr;?></span> -->
+	            <option selected>Select from list</option>
+	            <option value="bscs">BS(CS)</option>
+	            <option value="bsit">BS(IT)</option>
+	            <option value="bba">BBA</option>
+	            <option value="Electrical Engineering">Electrical Engineering</option>
+	            <option value="Civil Engineering">Civil Engineering</option>
+	            <option value="Accounts_finance">Bachelors in Accounts and Finance</option>
+	          </select>
+	          <div class="invalid-feedback">
+               	Degree name is required
+              </div>
+	      	</div>
+      	</div>
+    </div>
+
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+</div>
+
+<script type="text/javascript">
+ //<![CDATA[ 
+ // array of possible countries in the same order as they appear in the country selection list 
+ var cityLists = new Array(6) 
+ cityLists["empty"] = ["Select a City"]; 
+ cityLists["Pakistan"] = ["Islamabad", "Lahore", "Karachi","Quetta","Peshawar","Multan","FATA"]; 
+ cityLists["India"] = ["Mumbai", "Delhi", "Kolkata"]; 
+ cityLists["China"] = ["Beijing", "Hong Kong", "Shanghai"]; 
+ cityLists["America"]= ["New York", "Los Angeles", "Chicago"]; 
+ cityLists["Canada"]= ["Vancouver", "Calgary", "Toronto"];
+ cityLists["England"]= ["London", "Birmingham", "Manchester", "Liverpool"];
+ /* cityChange() is called from the onchange event of a select element. 
+ * param selectObj - the select object which fired the on change event. 
+ */ 
+ function cityChange(selectObj) { 
+ // get the index of the selected option 
+ var idx = selectObj.selectedIndex; 
+ // get the value of the selected option 
+ var which = selectObj.options[idx].value; 
+ // use the selected option value to retrieve the list of items from the cityLists array 
+ cList = cityLists[which]; 
+ // get the city select element via its known id 
+ var cSelect = document.getElementById("city"); 
+ // remove the current options from the city select 
+ var len=cSelect.options.length; 
+ while (cSelect.options.length > 0) { 
+ cSelect.remove(0); 
+ } 
+ var newOption; 
+ // create new options 
+ for (var i=0; i<cList.length; i++) { 
+ newOption = document.createElement("option"); 
+ newOption.value = cList[i];  // assumes option string and value are the same 
+ newOption.text=cList[i]; 
+ // add the new option 
+ try { 
+ cSelect.add(newOption);  // this will fail in DOM browsers but is needed for IE 
+ } 
+ catch (e) { 
+ cSelect.appendChild(newOption); 
+ } 
+ } 
+ } 
+//]]>
+</script>
+
+<!--for districts-->
+<script type="text/javascript">
+ //<![CDATA[ 
+ // array of possible districts in the same order as they appear in the country selection list 
+ var districtLists = new Array(22) 
+ districtLists["empty"] = ["Select a district"]; 
+ districtLists["Islamabad"] = ["Islamabad"]; 
+ districtLists["Lahore"] = ["Lahore"]; 
+ districtLists["Peshawar"] = ["Peshawar"]; 
+ districtLists["Multan"]= ["Multan"]; 
+ districtLists["Quetta"]= ["Quetta"];
+ districtLists["FATA"]= ["FATA"];
+ districtLists["Mumbai"]= ["Mumbai"];
+ districtLists["Delhi"]= ["Delhi"];
+ districtLists["Kolkata"]= ["Kolkata"];
+ districtLists["Beijing"]= ["Beijing"];
+ districtLists["Hong Kong"]= ["Hong Kong"];
+ districtLists["Shanghai"]= ["Shanghai"];
+ districtLists["London"]= ["London"];
+ districtLists["Birmingham"]= ["Birmingham"];
+ districtLists["Manchester"]= ["Manchester"];
+ districtLists["Liverpool"]= ["Liverpool"];
+ districtLists["New York"]= ["New York"];
+ districtLists["Los Angeles"]= ["Los Angeles"];
+ districtLists["Chicago"]= ["Chicago"];
+ districtLists["Toronto"]= ["Toronto"];
+ districtLists["vancouver"]= ["vancouver"];
+ districtLists["Calgary"]= ["Calgary"];
+ /* districtChange() is called from the onchange event of a select element. 
+ * param selectObj - the select object which fired the on change event. 
+ */ 
+ function districtChange(selectObj) { 
+ // get the index of the selected option 
+ var idx = selectObj.selectedIndex; 
+ // get the value of the selected option 
+ var which = selectObj.options[idx].value; 
+ // use the selected option value to retrieve the list of items from the districtLists array 
+ cList = districtLists[which]; 
+ // get the district select element via its known id 
+ var cSelect = document.getElementById("district"); 
+ // remove the current options from the district select 
+ var len=cSelect.options.length; 
+ while (cSelect.options.length > 0) { 
+ cSelect.remove(0); 
+ } 
+ var newOption; 
+ // create new options 
+ for (var i=0; i<cList.length; i++) { 
+ newOption = document.createElement("option"); 
+ newOption.value = cList[i];  // assumes option string and value are the same 
+ newOption.text=cList[i]; 
+ // add the new option 
+ try { 
+ cSelect.add(newOption);  // this will fail in DOM browsers but is needed for IE 
+ } 
+ catch (e) { 
+ cSelect.appendChild(newOption); 
+ } 
+ } 
+ } 
+//]]>
+</script>
+
+<script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+
+</script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  
+  
+</body>
+</html>
