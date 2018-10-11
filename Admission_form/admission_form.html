@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Admission Form</title>
+  <title>Title</title>
   <meta charset="utf-8">
   <!--responsive screen and touch zooming-->
   <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
-  <!--stylesheets-->
-  <!-- <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/bootstrap-grid.css">
-  <link rel="stylesheet" href="css/bootstrap-reboot.css">
-  <link rel="stylesheet" href="css/bootstrap-reboot.min.css"> -->
 
   <!--Online libraries-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -22,7 +16,7 @@
 <body style="background-color:gray">
   
 <div class="container mt-3 mb-5">
-    <h1 class="text-center display-4">Admission Form</h1><hr class="bg-dark">
+    <h1 class="text-center display-4">Student Admission Form</h1><hr class="bg-dark">
     <h4 class="mt-5 mb-3">Personal Info</h4>
     <form class="needs-validation" novalidate method="post" action="admission_form.php">
 
@@ -30,7 +24,7 @@
   <!--  <div class="form-inline mb-3">-->
           <div class="col-md-4">
             <label for="name">Enter your name:</label>
-            <input type="text" class="form-control " style="width: 300px;" placeholder="Name" id="name" name="name" required><!-- <span> <?php echo $nameErr; ?></span> -->
+            <input type="text" class="form-control " style="width: 300px;" placeholder="Name" id="name" name="name" required>
             <div class="invalid-feedback">
                 Valid first name is required
             </div>
@@ -38,7 +32,7 @@
 
         <div class="col-md-4">
           <label for="fname" >Enter your father name:</label>
-          <input type="text" class="form-control" style="width: 300px;" placeholder="Father Name"  id="fname" name="father_name" required><!-- <span> <?php echo $fnameErr;?></span> -->
+          <input type="text" class="form-control" style="width: 300px;" placeholder="Father Name"  id="fname" name="father_name" required>
           <div class="invalid-feedback">
                 Valid first name is required
            </div>
@@ -66,7 +60,7 @@
 
         <div class="col-md-4">
           <label for="cnic">CNIC/B-form No</label>
-          <input type="CNIC" class="form-control" id="cnic" style="width: 300px;" placeholder="*****-*******-*" name="cnic" required><!-- <span> <?php echo $cnicErr;?></span> -->
+          <input type="CNIC" class="form-control" id="cnic" style="width: 300px;" placeholder="*****-*******-*" name="cnic" required>
           <div class="invalid-feedback">
                 Valid CNIC/B-form No is required
           </div>
@@ -74,7 +68,7 @@
 
         <div class="col-md-4">
           <label for="contact">Contact No</label>
-          <input type="contact-no" class="form-control" id="contact" style="width: 300px;" placeholder="****-*******" name="contact_no" required><!-- <span> <?php echo $contactErr;?></span> -->
+          <input type="contact-no" class="form-control" id="contact" style="width: 300px;" placeholder="****-*******" name="contact_no" required>
           <div class="invalid-feedback">
                 Valid contact no is required
           </div>
@@ -84,7 +78,7 @@
      <div class="row mb-3">
        	<div class="col-md-5">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email"  placeholder="abc@example.com" name="email"><!-- <span> <?php echo $emailErr;?></span> -->
+            <input type="email" class="form-control" id="email"  placeholder="abc@example.com" name="email">
         </div>
 
         <div class="col-md-4 mt-3 form-inline">
@@ -158,7 +152,7 @@
 	  	<div class="row mb-3">
 	        <div class="col-md-4">
 	          <label for="matric">Matric/O-level</label>
-	          <input type="marks" class="form-control" id="matric" style="width: 300px;" placeholder="Matric/O-level marks" name="matric_marks"  required><!-- <span> <?php echo $matric_marksErr;?></span> -->
+	          <input type="marks" class="form-control" id="matric" style="width: 300px;" placeholder="Matric/O-level marks" name="matric_marks"  required>
 	          <div class="invalid-feedback">
                 Matric/O-level marks are required
               </div>
@@ -172,7 +166,8 @@
 	        </div>
 	      	<div class="col-md-4">
 	      		<label for="degree">Degree you are applying for</label>
-	          <select name="pursuing_program" style="width: 300px;" id="degree" class="custom-select" required><!-- <span> <?php echo $pursuing_programErr;?></span> -->
+	          <select name="pursuing_program" style="width: 300px;" id="degree" class="custom-select" required>
+
 	            <option selected>Select from list</option>
 	            <option value="bscs">BS(CS)</option>
 	            <option value="bsit">BS(IT)</option>
